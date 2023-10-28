@@ -6,6 +6,9 @@
       "dom.iterable",
       "esnext"
     ],
+    "sourceMap": true,
+    "declaration": true,
+    "noImplicitAny": true,
     "types": ["cypress"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -26,6 +29,7 @@
     "tests",
     "jest.config.js",
     "cypress.config.ts",
-    "vite.config.ts"
+    "vite.config.ts",
+    "tailwind.config.ts"
   ]
 }
