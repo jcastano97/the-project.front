@@ -90,7 +90,7 @@ Vamos a `CLONAR REPOSITORIO`:
 - En la página web que acabamos de ingresar vamos a descargar el ejecutable (para Windows):
   (paso 1)
   ![Alt text](public/readme/images/image17.png)
-  (paso 2) recomiendo ejecutar como administrador*
+  (paso 2)
   ![Alt text](public/readme/images/image18.png)
   (paso 3) siguiente, siguiente..., instalar
   ![Alt text](public/readme/images/image19.png)
@@ -103,7 +103,7 @@ Vamos a `CLONAR REPOSITORIO`:
 
 ## 4. CORRER EL PROYECTO LOCALMENTE
 
-Abrir VSC:
+Abrir la carpeta del proyecto en VSC:
 ![Alt text](public/readme/images/image21.png)
 
 En VSC click derecho en el menu lateral y click en `Abrir en terminal` (CMD):
