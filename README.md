@@ -54,7 +54,7 @@ Vamos a `CLONAR REPOSITORIO`:
   ![Alt text](public/readme/images/image9.png)
   Podemos copiar la carpeta del proyecto donde lo necesitemos*
 
-### 3. AMBIENTE DE DESARROLLO
+### [3. AMBIENTE DE DESARROLLO](public/readme/developer_enviroment.md)
 
 #### Vamos a comenzar instalando Visual Studio Code
   - Para instalar VSC en nuestro sistema ingresamos a: <https://visualstudio.microsoft.com/es/vs/community/>
