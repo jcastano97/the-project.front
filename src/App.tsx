@@ -1,3 +1,5 @@
+import Button from "@mui/material/Button";
+
 import { UserCard } from "./sections/users/UserCard";
 import { useUsers } from "./sections/users/useUsers";
 
@@ -11,6 +13,7 @@ export function App() {
 			{users.map((user) => (
 				<UserCard key={user.name} user={user} />
 			))}
+			<Button variant="contained">Hello world</Button>
 		</div>
 	);
 }
