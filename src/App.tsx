@@ -1,10 +1,13 @@
 import { Button } from "./core/components/material-ui/Button";
 import { Input } from "./core/components/material-ui/Input";
 import { ToggleDarkMode } from "./core/components/ToggleDarkMode";
+import { logger } from "./core/utils/logger";
 import { UserCard } from "./sections/users/UserCard";
 import { useUsers } from "./sections/users/useUsers";
 
 export function App() {
+	logger.info("App");
+
 	const users = useUsers();
 
 	return (
