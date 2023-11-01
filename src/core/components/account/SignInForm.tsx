@@ -7,7 +7,11 @@ import { Button } from "../material-ui/Button";
 import { Checkbox } from "../material-ui/Checkbox";
 import { Input } from "../material-ui/Input";
 
-export function SignInForm() {
+type SignInFormProps = {
+	unauthorizedRoute?: string;
+};
+
+export function SignInForm({ unauthorizedRoute }: SignInFormProps) {
 	const {
 		register,
 		handleSubmit,
@@ -29,6 +33,11 @@ export function SignInForm() {
 	const onSubmit: SubmitHandler<SignInRequestInterface> = (data, event) => {
 		event?.preventDefault();
 		logger.info("data:", data);
+		if (unauthorizedRoute) {
+			//redirect to unauthorizedRoute
+		} else {
+			//redirect to home
+		}
 	};
 
 	const onSubmitError: SubmitErrorHandler<SignInRequestInterface> = (errors) => {

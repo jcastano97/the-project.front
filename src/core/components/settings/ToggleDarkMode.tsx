@@ -1,26 +1,40 @@
 import { faCircleHalfStroke } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useEffect } from "react";
 
-const THEME_DARK_MODE = "dark";
+import { logger } from "../../utils/logger";
+
+const THEME_CLASS_DARK_MODE = "dark";
 
 export function ToggleDarkMode() {
-	const lsTheme = localStorage.getItem("theme");
-	const [selectedTheme, setSelectedTheme] = React.useState(
-		lsTheme === THEME_DARK_MODE ? THEME_DARK_MODE : ""
-	);
+	const storageDarkMode = localStorage.getItem("darkMode");
+	const [darkMode, setDarkMode] = React.useState(storageDarkMode === "true" ? "true" : "false");
 
-	const toggleDarkMode = () => {
-		if (selectedTheme === THEME_DARK_MODE) {
-			document.documentElement.classList.remove(THEME_DARK_MODE);
-			localStorage.setItem("theme", "");
-			setSelectedTheme("");
+	const initDarkMode = () => {
+		if (darkMode === "true") {
+			document.documentElement.classList.add(THEME_CLASS_DARK_MODE);
 		} else {
-			document.documentElement.classList.add(THEME_DARK_MODE);
-			localStorage.setItem("theme", THEME_DARK_MODE);
-			setSelectedTheme(THEME_DARK_MODE);
+			document.documentElement.classList.remove(THEME_CLASS_DARK_MODE);
 		}
 	};
+
+	const toggleDarkMode = () => {
+		if (darkMode === "true") {
+			document.documentElement.classList.remove(THEME_CLASS_DARK_MODE);
+			localStorage.setItem("darkMode", "false");
+			setDarkMode("false");
+			logger.info("darkMode false");
+		} else {
+			document.documentElement.classList.add(THEME_CLASS_DARK_MODE);
+			localStorage.setItem("darkMode", "true");
+			setDarkMode("true");
+			logger.info("darkMode true");
+		}
+	};
+
+	useEffect(() => {
+		initDarkMode();
+	});
 
 	return (
 		<>
