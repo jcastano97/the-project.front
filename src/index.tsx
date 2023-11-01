@@ -1,37 +1,25 @@
 import "./index.css";
 
+import { debounce } from "debounce";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Provider } from "react-redux";
+import { RouterProvider } from "react-router-dom";
 
-import ErrorPage from "./core/components/settings/ErrorPage";
-import { AccountPage } from "./core/views/account/AccountPage";
-import { HomePage } from "./views/HomePage";
-import { LandingPage } from "./views/LandingPage";
+import { router } from "./router";
+import { saveState, store } from "./store";
 
-const loggedIn = false;
-
-const router = createBrowserRouter([
-	{
-		path: "/",
-		element: <LandingPage />,
-		errorElement: <ErrorPage />,
-	},
-	{
-		path: "/account",
-		element: <AccountPage />,
-		errorElement: <ErrorPage />,
-	},
-	{
-		path: "/home",
-		element: loggedIn ? <HomePage /> : <AccountPage unauthorizedRoute="/home" />,
-		errorElement: <ErrorPage />,
-	},
-]);
+store.subscribe(
+	debounce(() => {
+		saveState(store.getState());
+	}, 800)
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
 	<React.StrictMode>
-		<RouterProvider router={router} />
+		<Provider store={store}>
+			<RouterProvider router={router} />
+		</Provider>
 	</React.StrictMode>
 );

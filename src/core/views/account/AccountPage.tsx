@@ -2,6 +2,8 @@ import { Button } from "@mui/base";
 
 import { SignInForm } from "../../components/account/SignInForm";
 import { BaseLayout } from "../../layouts/BaseLayout";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { logoutAccount } from "../../store/reducers/accountReducer";
 import { BackgroundImgProps } from "../../types/BackgroundImgPropsInterface";
 
 type AccountPageProps = {
@@ -9,13 +11,20 @@ type AccountPageProps = {
 };
 
 export function AccountPage({ unauthorizedRoute }: AccountPageProps) {
-	const loggedIn = false;
+	const isLogged = useAppSelector((state) => state.account.isLogged);
+	const dispatch = useAppDispatch();
 
-	return loggedIn ? (
+	return isLogged ? (
 		<BaseLayout>
 			<div className="mx-auto my-auto">
 				<h1>Account page</h1>
-				<Button>Logout</Button>
+				<Button
+					onClick={() => {
+						dispatch(logoutAccount());
+					}}
+				>
+					Logout
+				</Button>
 			</div>
 		</BaseLayout>
 	) : (

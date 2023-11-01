@@ -1,6 +1,8 @@
 import React from "react";
 import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from "react-hook-form";
 
+import { useAppDispatch } from "../../store/hooks";
+import { signInAccount } from "../../store/reducers/accountReducer";
 import { SignInRequestInterface } from "../../types/account/SignInRequestInterface";
 import { logger } from "../../utils/logger";
 import { Button } from "../material-ui/Button";
@@ -12,11 +14,10 @@ type SignInFormProps = {
 };
 
 export function SignInForm({ unauthorizedRoute }: SignInFormProps) {
+	const dispatch = useAppDispatch();
+
 	const {
-		register,
 		handleSubmit,
-		watch,
-		setError,
 		control,
 		formState: { isDirty, isValid },
 	} = useForm<SignInRequestInterface>({
@@ -33,6 +34,7 @@ export function SignInForm({ unauthorizedRoute }: SignInFormProps) {
 	const onSubmit: SubmitHandler<SignInRequestInterface> = (data, event) => {
 		event?.preventDefault();
 		logger.info("data:", data);
+		dispatch(signInAccount(data));
 		if (unauthorizedRoute) {
 			//redirect to unauthorizedRoute
 		} else {
