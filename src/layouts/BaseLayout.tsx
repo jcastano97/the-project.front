@@ -1,7 +1,7 @@
 import React from "react";
 
-import { ToggleDarkMode } from "../components/settings/ToggleDarkMode";
-import { BackgroundImgPropsInterface } from "../types/BackgroundImgPropsInterface";
+import { ToggleDarkMode } from "@components/settings/ToggleDarkMode";
+import { BackgroundImgPropsInterface } from "@interfaces/BackgroundImgPropsInterface";
 
 export class BaseLayout extends React.Component<{
 	children: React.ReactNode;

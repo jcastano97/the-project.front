@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-import { Button } from "../core/components/material-ui/Button";
-import { BaseLayout } from "../core/layouts/BaseLayout";
+import { Button } from "@components/material-ui/Button";
+import { BaseLayout } from "@layouts/BaseLayout";
 
 export function LandingPage() {
 	return (

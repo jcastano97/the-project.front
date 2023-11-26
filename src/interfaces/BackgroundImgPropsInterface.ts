@@ -5,7 +5,7 @@ interface BackgroundImgPropsInterface {
 	backgroundPosition?: string;
 }
 
-class BackgroundImgProps {
+export class BackgroundImgProps {
 	static SrcCentered(src: string): BackgroundImgPropsInterface {
 		return {
 			backgroundImage: `url(${src})`,
@@ -16,5 +16,4 @@ class BackgroundImgProps {
 	}
 }
 
-export { BackgroundImgProps };
 export type { BackgroundImgPropsInterface };

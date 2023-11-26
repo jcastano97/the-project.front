@@ -1,4 +1,4 @@
-import { BaseLayout } from "../core/layouts/BaseLayout";
+import { BaseLayout } from "@layouts/BaseLayout";
 
 export function HomePage() {
 	return (

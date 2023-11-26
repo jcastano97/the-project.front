@@ -1,10 +1,10 @@
 import { Button } from "@mui/base";
 
-import { SignInForm } from "../../components/account/SignInForm";
-import { BaseLayout } from "../../layouts/BaseLayout";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { logoutAccount } from "../../store/reducers/accountReducer";
-import { BackgroundImgProps } from "../../types/BackgroundImgPropsInterface";
+import { SignInForm } from "@components/account/SignInForm";
+import { BaseLayout } from "@layouts/BaseLayout";
+import { useAppDispatch, useAppSelector } from "@store/hooks";
+import { logoutAccount } from "@store/reducers/accountReducer";
+import { BackgroundImgProps } from "@interfaces/BackgroundImgPropsInterface";
 
 type AccountPageProps = {
 	unauthorizedRoute?: string;

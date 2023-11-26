@@ -1,11 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-import { AccountInterface } from "../../types/account/AccountInterface";
-import { SignInRequestInterface } from "../../types/account/SignInRequestInterface";
-import { logger } from "../../utils/logger";
+import { AccountInterface } from "@interfaces/account/AccountInterface";
+import { SignInRequestInterface } from "@interfaces/account/SignInRequestInterface";
+import { logger } from "@utils/logger";
 
 // Define a type for the slice state
-interface AccountState {
+export interface AccountState {
 	isLogged: boolean;
 	token: string;
 	data?: AccountInterface;

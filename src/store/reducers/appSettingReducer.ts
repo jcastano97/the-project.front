@@ -1,9 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-import { logger } from "../../utils/logger";
+import { logger } from "@utils/logger";
 
 // Define a type for the slice state
-interface AppSettingState {
+export interface AppSettingState {
 	isDarkMode: boolean;
 }
 

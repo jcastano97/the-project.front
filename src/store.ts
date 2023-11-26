@@ -1,8 +1,7 @@
 import { configureStore, StateFromReducersMapObject } from "@reduxjs/toolkit";
-
-import accountReducer from "./core/store/reducers/accountReducer";
-import appSettingReducer from "./core/store/reducers/appSettingReducer";
-import { logger } from "./core/utils/logger";
+import accountReducer from "@store/reducers/accountReducer";
+import appSettingReducer from "@store/reducers/appSettingReducer";
+import { logger } from "@utils/logger";
 
 const reducer = {
 	appSetting: appSettingReducer,
