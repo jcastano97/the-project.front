@@ -1,14 +1,14 @@
 import React from "react";
 import { ControllerRenderProps, FieldError } from "react-hook-form";
 
-export class Checkbox extends React.Component<
+export class CustomCheckbox extends React.Component<
 	ControllerRenderProps & { children: React.ReactNode; hookError?: FieldError }
 > {
 	render(): React.ReactNode {
 		const { children, hookError, ...field } = this.props;
 
 		return (
-			<div className="text-right flex flex-col">
+			<div className="flex flex-col text-right">
 				{this.props.hookError && (
 					<span className="text-xs text-red-600">{this.props.hookError.type}</span>
 				)}

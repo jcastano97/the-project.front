@@ -1,13 +1,13 @@
 import React from "react";
 import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from "react-hook-form";
 
-import { useAppDispatch } from "../../store/hooks";
-import { signInAccount } from "../../store/reducers/accountReducer";
-import { SignInRequestInterface } from "../../types/account/SignInRequestInterface";
-import { logger } from "../../utils/logger";
-import { Button } from "../material-ui/Button";
-import { Checkbox } from "../material-ui/Checkbox";
-import { Input } from "../material-ui/Input";
+import { useAppDispatch } from "@store/hooks";
+import { signInAccount } from "@store/reducers/accountReducer";
+import { SignInRequestInterface } from "@interfaces/account/SignInRequestInterface";
+import { logger } from "@utils/logger";
+import { CustomButton } from "@components/common/material-ui/CustomButton";
+import { CustomCheckbox } from "@components/common/material-ui/CustomCheckbox";
+import { CustomInput } from "@components/common/material-ui/CustomInput";
 
 type SignInFormProps = {
 	unauthorizedRoute?: string;
@@ -62,7 +62,7 @@ export function SignInForm({ unauthorizedRoute }: SignInFormProps) {
 					rules={{ required: true }}
 					render={({ field: { ref, ...field }, fieldState: { error } }) => (
 						<>
-							<Input {...field} inputRef={ref} hookError={error} className="" placeholder="Email" />
+							<CustomInput {...field} inputRef={ref} hookError={error} className="" placeholder="Email" />
 						</>
 					)}
 				/>
@@ -73,7 +73,7 @@ export function SignInForm({ unauthorizedRoute }: SignInFormProps) {
 					rules={{ required: true }}
 					render={({ field: { ref, ...field }, fieldState: { error } }) => (
 						<>
-							<Input
+							<CustomInput
 								{...field}
 								inputRef={ref}
 								hookError={error}
@@ -90,7 +90,7 @@ export function SignInForm({ unauthorizedRoute }: SignInFormProps) {
 					rules={{ required: true }}
 					render={({ field, fieldState: { error } }) => (
 						<>
-							<Checkbox {...field} hookError={error}>
+							<CustomCheckbox {...field} hookError={error}>
 								<p className="flex items-center text-sm antialiased font-normal leading-normal">
 									I agree the
 									<a
@@ -100,17 +100,17 @@ export function SignInForm({ unauthorizedRoute }: SignInFormProps) {
 										&nbsp;Terms and Conditions
 									</a>
 								</p>
-							</Checkbox>
+							</CustomCheckbox>
 						</>
 					)}
 				/>
-				<Button type="submit" disabled={firstSubmit && (!isDirty || !isValid)}>
+				<CustomButton type="submit" disabled={firstSubmit && (!isDirty || !isValid)}>
 					Sign in
-				</Button>
+				</CustomButton>
 				<p className="block text-base antialiased font-normal leading-relaxed text-center text-gray-800 dark:text-white">
 					Want to create an account?
 					<a
-						className="ml-2 font-medium text-blue-600 hover:text-green-600 dark:text-green-600 dark:hover:text-blue-600 transition-colors"
+						className="ml-2 font-medium text-blue-600 transition-colors hover:text-green-600 dark:text-green-600 dark:hover:text-blue-600"
 						href="/sign-up"
 					>
 						Sign Up

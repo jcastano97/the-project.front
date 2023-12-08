@@ -5,9 +5,7 @@ import { useAppDispatch } from "@store/hooks";
 import { signInAccount } from "@store/reducers/accountReducer";
 import { SignInRequestInterface } from "@interfaces/account/SignInRequestInterface";
 import { logger } from "@utils/logger";
-import { Button } from "@components/material-ui/Button";
-import { Checkbox } from "@components/material-ui/Checkbox";
-import { Input } from "@components/material-ui/Input";
+import { CustomButton, CustomCheckbox, CustomInput } from "@components/common/material-ui";
 
 export function DigitalSign() {
 	const dispatch = useAppDispatch();

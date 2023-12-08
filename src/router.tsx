@@ -8,6 +8,7 @@ import { store } from "./store";
 import { HomePage } from "@views/HomePage";
 import { LandingPage } from "@views/LandingPage";
 import { DigitalSignPage } from "@views/digitalSign/digitalSignPage";
+import { CustomEntityPage } from "@views/customEntity/CustomEntityPage";
 
 AxiosClient.init(AUTH_API_URL(), store.getState().account.token ?? "");
 
@@ -30,6 +31,11 @@ export const router = createBrowserRouter([
 	{
 		path: "/digitalSign",
 		element: <DigitalSignPage />,
+		errorElement: <ErrorPage />,
+	},
+	{
+		path: "/customEntity",
+		element: <CustomEntityPage />,
 		errorElement: <ErrorPage />,
 	},
 ]);

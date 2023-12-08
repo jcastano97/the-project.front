@@ -5,9 +5,7 @@ import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from "react-ho
 
 import { SignInRequestInterface } from "@interfaces/account/SignInRequestInterface";
 import { logger } from "@utils/logger";
-import { Button } from "@components/material-ui/Button";
-import { Checkbox } from "@components/material-ui/Checkbox";
-import { Input } from "@components/material-ui/Input";
+import { CustomButton, CustomCheckbox, CustomInput } from "@components/common/material-ui";
 
 export function IdentificationDocument() {
 	const dispatch = useAppDispatch();
@@ -58,7 +56,7 @@ export function IdentificationDocument() {
 					rules={{ required: true }}
 					render={({ field: { ref, ...field }, fieldState: { error } }) => (
 						<>
-							<Input {...field} inputRef={ref} hookError={error} className="" placeholder="Email" />
+							<CustomInput {...field} inputRef={ref} hookError={error} className="" placeholder="Email" />
 						</>
 					)}
 				/>
@@ -69,7 +67,7 @@ export function IdentificationDocument() {
 					rules={{ required: true }}
 					render={({ field: { ref, ...field }, fieldState: { error } }) => (
 						<>
-							<Input
+							<CustomInput
 								{...field}
 								inputRef={ref}
 								hookError={error}
@@ -86,7 +84,7 @@ export function IdentificationDocument() {
 					rules={{ required: true }}
 					render={({ field, fieldState: { error } }) => (
 						<>
-							<Checkbox {...field} hookError={error}>
+							<CustomCheckbox {...field} hookError={error}>
 								<p className="flex items-center text-sm antialiased font-normal leading-normal">
 									I agree the
 									<a
@@ -96,13 +94,13 @@ export function IdentificationDocument() {
 										&nbsp;Terms and Conditions
 									</a>
 								</p>
-							</Checkbox>
+							</CustomCheckbox>
 						</>
 					)}
 				/>
-				<Button type="submit" disabled={firstSubmit && (!isDirty || !isValid)}>
+				<CustomButton type="submit" disabled={firstSubmit && (!isDirty || !isValid)}>
 					Sign in
-				</Button>
+				</CustomButton>
 				<p className="block text-base antialiased font-normal leading-relaxed text-center text-gray-800 dark:text-white">
 					Want to create an account?
 					<a
