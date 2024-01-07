@@ -9,6 +9,7 @@ import { HomePage } from "@views/HomePage";
 import { LandingPage } from "@views/LandingPage";
 import { DigitalSignPage } from "@views/digitalSign/digitalSignPage";
 import { CustomEntityPage } from "@views/customEntity/CustomEntityPage";
+import { ConnectFourPage } from "@views/connectFour/ConnectFourPage";
 
 AxiosClient.init(AUTH_API_URL(), store.getState().account.token ?? "");
 
@@ -36,6 +37,11 @@ export const router = createBrowserRouter([
 	{
 		path: "/customEntity",
 		element: <CustomEntityPage />,
+		errorElement: <ErrorPage />,
+	},
+	{
+		path: "/connectFour",
+		element: <ConnectFourPage />,
 		errorElement: <ErrorPage />,
 	},
 ]);

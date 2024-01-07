@@ -16,6 +16,9 @@ export function LandingPage() {
 			<Link to="/customEntity">
 				<CustomButton>Go to custom entity</CustomButton>
 			</Link>
+			<Link to="/connectFour">
+				<CustomButton>Go to connectFour</CustomButton>
+			</Link>
 		</BaseLayout>
 	);
 }

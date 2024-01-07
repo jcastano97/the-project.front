@@ -10,7 +10,7 @@ export class CustomButton extends React.Component<ButtonProps> {
 				? this.props.className
 				: (this.props.slotProps?.root?.className as ClassNameValue)
 		);
-
+		1
 		return (
 			<BaseButton
 				{...this.props}

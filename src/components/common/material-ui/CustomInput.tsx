@@ -27,9 +27,9 @@ export class CustomInput extends React.Component<InputProps & Props> {
 		);
 
 		return (
-			<div className="text-right">
+			<div className="text-right relative">
 				{hookError && (
-					<span className="text-xs text-red-600">{hookError.type}</span>
+					<span className="text-xs text-red-600 absolute top-0 right-0 -translate-y-4">{hookError.type}</span>
 				)}
 				<BaseInput
 					ref={this.ref}
